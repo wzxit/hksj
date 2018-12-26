@@ -1,0 +1,2 @@
+com.hksj.limit.annotation.EnableLimit=\
+com.hksj.limit.config.LimitConfiguration

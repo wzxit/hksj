@@ -1,0 +1,2 @@
+1、java编译时获取  Parameter是关闭的--主要获取接口参数使用；
+所以idea中找到File->Settings->java Compiler中的Additional command line parameters添加-parameters参数
