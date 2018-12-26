@@ -22,7 +22,7 @@
         </RollingRandomAccessFile>
     </Appenders>
     <Loggers>
-        <AsyncLogger name="com.nepxion.aquarius" level="info" additivity="false" includeLocation="true">
+        <AsyncLogger name="com.hksj.limit" level="info" additivity="false" includeLocation="true">
             <AppenderRef ref="stdout"/>
         </AsyncLogger>
         <AsyncRoot level="info" includeLocation="true">
