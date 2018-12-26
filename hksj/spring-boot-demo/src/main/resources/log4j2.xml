@@ -10,7 +10,7 @@
         </Console>
         <!-- log/aquarius.log to project path -->
         <!-- /log/aquarius.log to root path -->
-        <RollingRandomAccessFile name="logfile" fileName="log/aquarius.log" filePattern="log/aquarius-%d{yyyy-MM-dd}.log.%i">
+        <RollingRandomAccessFile name="logfile" fileName="log/limit.log" filePattern="log/limit-%d{yyyy-MM-dd}.log.%i">
             <PatternLayout>
                 <Pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} %level [%thread][%class:%line] - %msg%n</Pattern>
             </PatternLayout>
