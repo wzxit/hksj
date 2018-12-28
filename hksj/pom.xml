@@ -11,7 +11,6 @@
     <modules>
         <module>limit</module>
         <module>spring-boot-demo</module>
-        <module>spring-boot-demo02</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
