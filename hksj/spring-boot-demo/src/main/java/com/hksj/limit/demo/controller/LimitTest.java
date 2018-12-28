@@ -31,7 +31,7 @@ public class LimitTest {
     }
 
     @GetMapping("/limit01")
-    //@Limit(name = "limit", key = "#id1 + \"-\" + #id2", limitPeriod = 10, limitCount = 3)
+    @Limit(name = "limit", key = "#id1 + \"-\" + #id2", limitPeriod = 10, limitCount = 3)
     public String limit01(String id1, String id2){
         return "xxx="+id1+id2;
     }
