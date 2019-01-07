@@ -26,7 +26,7 @@ public class RedisLimitDelegateImpl implements LimitDelegate {
             status = limitExecutor.tryAccess(key, limitPeriod, limitCount);
         } catch (Exception e) {
             if (limitAopExceptionIgnore) {
-                LOG.error("Redis exception occurs while Limit", e);
+                LOG.error("Redis exception 限制期发生异常", e);
 
                 return invocation.proceed();
             } else {

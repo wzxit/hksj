@@ -19,7 +19,7 @@ public class RedissonHandlerImpl implements RedissonHandler {
 
             initialize(config);
         } catch (Exception e) {
-            LOG.error("Initialize Redisson failed", e);
+            LOG.error("初始化 Redisson 失败", e);
         }
     }
 
@@ -27,7 +27,7 @@ public class RedissonHandlerImpl implements RedissonHandler {
         try {
             initialize(config);
         } catch (Exception e) {
-            LOG.error("Initialize Redisson failed", e);
+            LOG.error("初始化 Redisson 失败", e);
         }
     }
 
@@ -38,10 +38,10 @@ public class RedissonHandlerImpl implements RedissonHandler {
 
     // 使用config创建Redisson
     private void create(Config config) {
-        LOG.info("Start to initialize Redisson...");
+        LOG.info("开始初始化 Redisson...");
 
         if (redisson != null) {
-            throw new LimitException("Redisson isn't null, it has been initialized already");
+            throw new LimitException("Redisson 不能为空, 已经初始化");
         }
 
         redisson = Redisson.create(config);
@@ -67,7 +67,7 @@ public class RedissonHandlerImpl implements RedissonHandler {
     @Override
     public boolean isStarted() {
         if (redisson == null) {
-            throw new LimitException("Redisson isn't initialized");
+            throw new LimitException("Redisson未初始化");
         }
 
         return !redisson.isShutdown() && !redisson.isShuttingDown();
@@ -77,7 +77,7 @@ public class RedissonHandlerImpl implements RedissonHandler {
     @Override
     public void validateStartedStatus() {
         if (redisson == null) {
-            throw new LimitException("Redisson isn't initialized");
+            throw new LimitException("Redisson未初始化");
         }
 
         if (!isStarted()) {
@@ -89,7 +89,7 @@ public class RedissonHandlerImpl implements RedissonHandler {
     @Override
     public void validateClosedStatus() {
         if (redisson == null) {
-            throw new LimitException("Redisson isn't initialized");
+            throw new LimitException("Redisson未初始化");
         }
 
         if (isStarted()) {

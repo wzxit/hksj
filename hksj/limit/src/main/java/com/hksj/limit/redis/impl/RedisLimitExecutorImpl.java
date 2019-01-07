@@ -57,11 +57,11 @@ public class RedisLimitExecutorImpl implements LimitExecutor {
     @Override
     public boolean tryAccess(String name, String key, int limitPeriod, int limitCount) throws Exception {
         if (StringUtils.isEmpty(name)) {
-            throw new LimitException("Name is null or empty");
+            throw new LimitException("Name不能为空");
         }
 
         if (StringUtils.isEmpty(key)) {
-            throw new LimitException("Key is null or empty");
+            throw new LimitException("Key不能为空");
         }
 
         String compositeKey = KeyUtil.getCompositeKey(prefix, name, key);
@@ -72,7 +72,7 @@ public class RedisLimitExecutorImpl implements LimitExecutor {
     @Override
     public boolean tryAccess(String compositeKey, int limitPeriod, int limitCount) throws Exception {
         if (StringUtils.isEmpty(compositeKey)) {
-            throw new LimitException("Composite key is null or empty");
+            throw new LimitException("Composite key不能为空");
         }
 
         List<String> keys = new ArrayList<String>();

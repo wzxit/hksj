@@ -24,11 +24,11 @@ public class GuavaLocalLimitExecutorImpl implements LimitExecutor {
     @Override
     public boolean tryAccess(String name, String key, int limitPeriod, int limitCount) throws Exception {
         if (StringUtils.isEmpty(name)) {
-            throw new LimitException("Name is null or empty");
+            throw new LimitException("Name不能为空");
         }
 
         if (StringUtils.isEmpty(key)) {
-            throw new LimitException("Key is null or empty");
+            throw new LimitException("Key不能为空");
         }
 
         String compositeKey = KeyUtil.getCompositeKey(prefix, name, key);
@@ -39,12 +39,12 @@ public class GuavaLocalLimitExecutorImpl implements LimitExecutor {
     @Override
     public boolean tryAccess(String compositeKey, int limitPeriod, int limitCount) throws Exception {
         if (StringUtils.isEmpty(compositeKey)) {
-            throw new LimitException("Composite key is null or empty");
+            throw new LimitException("Composite值null或空");
         }
 
         //谷歌函数还不熟悉，只会每秒多少次访问
         if (limitPeriod != 1) {
-            throw new LimitException("Limit period must be 1 second for Guava rate limiter");
+            throw new LimitException("Limit period对于Guava速率限制器，必须是1秒");
         }
 
         RateLimiterEntity rateLimiterEntity = getRateLimiterEntity(compositeKey, limitCount);
